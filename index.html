@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenTools - Password & Nickname Generators</title>
+    <meta name="description" content="Free online tools for generating secure passwords and creative nicknames">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">GenTools</h1>
+            <nav class="nav">
+                <button class="nav-btn active" data-target="password-generator">Password Generator</button>
+                <button class="nav-btn" data-target="nickname-generator">Nickname Generator</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main container">
+        <!-- Password Generator Section -->
+        <section id="password-generator" class="tool-section active">
+            <h2>Password Generator</h2>
+            <div class="tool-controls">
+                <div class="control-group">
+                    <label for="pw-length">Length</label>
+                    <input type="number" id="pw-length" min="4" max="64" value="12">
+                </div>
+                <div class="control-group">
+                    <label for="pw-uppercase">Uppercase</label>
+                    <input type="checkbox" id="pw-uppercase" checked>
+                </div>
+                <div class="control-group">
+                    <label for="pw-lowercase">Lowercase</label>
+                    <input type="checkbox" id="pw-lowercase" checked>
+                </div>
+                <div class="control-group">
+                    <label for="pw-numbers">Numbers</label>
+                    <input type="checkbox" id="pw-numbers" checked>
+                </div>
+                <div class="control-group">
+                    <label for="pw-special">Special Characters</label>
+                    <input type="checkbox" id="pw-special">
+                </div>
+                <div class="control-group">
+                    <label for="pw-ambiguous">Exclude Ambiguous</label>
+                    <input type="checkbox" id="pw-ambiguous">
+                </div>
+                <div class="control-group">
+                    <label for="pw-count">Number of Passwords</label>
+                    <input type="number" id="pw-count" min="1" max="10" value="1">
+                </div>
+            </div>
+            <button id="generate-pw" class="btn primary">Generate Password(s)</button>
+            <div id="pw-results" class="results"></div>
+            <div class="password-tips">
+                <h3>Password Tips</h3>
+                <ul>
+                    <li>Use at least 12 characters</li>
+                    <li>Include a mix of character types</li>
+                    <li>Avoid common words or patterns</li>
+                    <li>Don't reuse passwords across sites</li>
+                    <li>Consider using a password manager</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Nickname Generator Section -->
+        <section id="nickname-generator" class="tool-section">
+            <h2>Nickname Generator</h2>
+            <div class="tool-controls">
+                <div class="control-group">
+                    <label for="nick-length">Length</label>
+                    <select id="nick-length">
+                        <option value="short">Short (3-5 chars)</option>
+                        <option value="medium" selected>Medium (6-8 chars)</option>
+                        <option value="long">Long (9-12 chars)</option>
+                        <option value="random">Random</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="nick-style">Style</label>
+                    <select id="nick-style">
+                        <option value="random">Random</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="tech">Tech</option>
+                        <option value="cute">Cute</option>
+                        <option value="cool">Cool</option>
+                        <option value="gamer">Gamer</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="nick-count">Number of Nicknames</label>
+                    <input type="number" id="nick-count" min="1" max="10" value="1">
+                </div>
+            </div>
+            <button id="generate-nick" class="btn primary">Generate Nickname(s)</button>
+            <div id="nick-results" class="results"></div>
+            <div class="nickname-tips">
+                <h3>Nickname Tips</h3>
+                <ul>
+                    <li>Choose something memorable but unique</li>
+                    <li>Consider your personality or interests</li>
+                    <li>Try combining words or adding numbers</li>
+                    <li>Make sure it's appropriate for all contexts</li>
+                    <li>Check availability if using for usernames</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© <span id="current-year">2023</span> GenTools - Free online generators</p>
+            <button id="theme-toggle" class="btn secondary">Toggle Dark Mode</button>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="cookie-consent hidden">
+        <p>We use cookies to remember your preferences. By using our site, you agree to our use of cookies.</p>
+        <button id="accept-cookies" class="btn primary">Accept</button>
+        <button id="decline-cookies" class="btn secondary">Decline</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/cookies.js"></script>
+    <script src="scripts/password-generator.js"></script>
+    <script src="scripts/nickname-generator.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
